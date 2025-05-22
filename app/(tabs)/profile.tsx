@@ -4,6 +4,7 @@ import { useProfile } from '@/components/useProfile';
 import React from 'react';
 import { Button, Dimensions, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import { PieChart } from 'react-native-chart-kit';
+import svg from 'react-native-svg'
 
 
 
