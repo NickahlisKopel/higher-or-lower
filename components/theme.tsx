@@ -1,14 +1,4 @@
-export const lightTheme = {
-    colors: {
-      background: '#ffffff',
-      text: '#000000',
-      card: '#f2f2f2',
-      primary: '#007aff',
-      border: '#e0e0e0',
-      correct: 'lime',
-      incorrect: 'tomato',
-    },
-  };
+
   
   export const darkTheme = {
     colors: {
@@ -21,6 +11,19 @@ export const lightTheme = {
       incorrect: 'tomato',
     },
   };
+
+  export const lightTheme = {
+    colors: {
+      background: '#ffffff',
+      text: '#000000',
+      card: '#f2f2f2',
+      primary: '#007aff',
+      border: '#e0e0e0',
+      correct: 'lime',
+      incorrect: 'tomato',
+    },
+  };
   
-  export type Theme = typeof lightTheme;
+  export type Theme = typeof darkTheme;
+
   

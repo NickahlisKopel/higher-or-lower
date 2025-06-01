@@ -3,7 +3,8 @@ export type PlayerProfile = {
     totalGames: number;
     correctGuesses: number;
     wrongGuesses: number;
-    unlockedAchievements: number[];
+    unlockedAchievements: Object[];
+    unlockedModes: number[];  
     settings:{
         darkMode:boolean;
         haptics:boolean;

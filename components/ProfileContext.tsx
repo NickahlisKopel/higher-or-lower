@@ -9,9 +9,10 @@ const defaultProfile: PlayerProfile = {
   totalGames: 0,
   correctGuesses: 0,
   wrongGuesses: 0,
-  unlockedAchievements: [],
+  unlockedAchievements:[],
+  unlockedModes:[10],
   settings: {
-    darkMode: false,
+    darkMode: true,
     haptics: true,
   },
 };
@@ -48,9 +49,21 @@ export const ProfileProvider = ({ children }: { children: React.ReactNode }) => 
     setProfileState(newProfile);
   };
 
-  const resetProfile = () => {
-    AsyncStorage.removeItem(STORAGE_KEY);
-    setProfileState(defaultProfile);
+  const resetProfile = async () => {
+    await AsyncStorage.removeItem('playerProfile'); // Clear saved profile
+    const freshProfile: PlayerProfile = {
+      username: 'Guest',
+      totalGames: 0,
+      correctGuesses: 0,
+      wrongGuesses: 0,
+      unlockedAchievements: [],
+      unlockedModes: [10],
+      settings: {
+        darkMode: true,
+        haptics: true,
+      },
+    };
+    setProfile(freshProfile);
   };
 
   return (

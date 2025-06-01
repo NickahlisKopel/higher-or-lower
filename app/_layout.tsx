@@ -2,6 +2,7 @@ import { ProfileProvider } from '@/components/ProfileContext';
 import { ThemeProvider } from '@/components/ThemeContext';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 import { useTheme } from '@/components/ThemeContext';
 
@@ -9,6 +10,7 @@ export default function RootLayout() {
   const { colors } = useTheme();
 
   return (
+    <GestureHandlerRootView style={{ flex: 1 }}>
     <ProfileProvider>
       <ThemeProvider>
         <Stack
@@ -24,5 +26,6 @@ export default function RootLayout() {
         <StatusBar style={colors.background === '#black' ? 'light' : 'dark'} />
       </ThemeProvider>
     </ProfileProvider>
+    </GestureHandlerRootView>
   );
 }
